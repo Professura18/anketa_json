@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+<script src="student.js"></script>	
+</head>
+<body>
+
+<div ng-controller="StudentCtrl">
+Поиск: <input  ng-model="searchFIO.fio" >
+<table>
+    <tr><th>Имя</th> <th>Фамилия</th> <th>Отчество</th> <th>Группа</th><tr>
+    <tr ng-repeat="student in students | filter:searchFIO:fio">
+    <td>{{student.fio.firstName}}</td>
+    <td>{{student.fio.surName}}</td>
+    <td>{{student.fio.middleName}}</td>
+    <td>{{student.group}}</td>
+    </tr>
+</table>
+</div>
+
+</body>
+</html>
