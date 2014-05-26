@@ -1,0 +1,38 @@
+[
+	{
+		"fio" : {
+			"firstName": "Иван",
+			"surName" : "Сидоров",
+			"middleName" : "Витальевич"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ПМИ",
+		"numberStudentRecordBook" : "10020",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Сергей",
+			"surName" : "Сидоров",
+			"middleName" : "Валентинович"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ПМИ",
+		"numberStudentRecordBook" : "10021",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	}
+]
