@@ -1,23 +1,33 @@
 <!doctype html>
-<html ng-app>
+<html lang="ru" ng-app="studentApp">
 <head>
 <meta charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+<script src="angular-1.2.17/angular.js"></script>
+<script src="angular-1.2.17/angular-animate.js"></script>
 <script src="student.js"></script>	
 </head>
 <body>
 
 <div ng-controller="StudentCtrl">
-Поиск: <input  ng-model="searchFIO.fio" >
+Поиск: <input  type="search" placeholder="Введите ФИО" ng-model="searchFIO.fio" >
+<span>Найдено <ng-pluralize count="filteredStudents.length" when="recordWordForms"></ng-pluralize></span>
 <table>
-    <tr><th>Имя</th> <th>Фамилия</th> <th>Отчество</th> <th>Группа</th><tr>
-    <tr ng-repeat="student in students | filter:searchFIO:fio">
+    <tr>
+    <th>№</th>
+    <th><a href="" ng-click="predicate = 'fio.firstName'; reverse=!reverse">Имя</a></th>
+    <th><a href="" ng-click="predicate = 'fio.surName'; reverse=!reverse">Фамилия</a></th>
+    <th><a href="" ng-click="predicate = 'fio.middleName'; reverse=!reverse">Отчество</a></th>
+    <th><a href="" ng-click="predicate = 'fio.group'; reverse=!reverse">Группа<a</th>
+    <tr>
+    <tr ng-repeat="student in filteredStudents = (students |  filter:searchFIO:fio | orderBy:predicate:reverse)" ng-click="openAnket(student)">
+    <td>{{$index+1}}</td>
     <td>{{student.fio.firstName}}</td>
     <td>{{student.fio.surName}}</td>
     <td>{{student.fio.middleName}}</td>
-    <td>{{student.group}}</td>
+    <td>{{student.group}}</td>    
     </tr>
 </table>
+
 </div>
 
 </body>
