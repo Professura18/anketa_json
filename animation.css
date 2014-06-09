@@ -1,0 +1,51 @@
+.animate-enter,
+.animate-leave
+{
+-webkit-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+-moz-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+-ms-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+-o-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+position: relative;
+} 
+     
+    .animate-enter.animate-enter-active,
+    .animate-leave {
+    opacity: 1;
+    top: 0;
+    height: 30px;
+    }
+     
+    .animate-leave.animate-leave-active,
+    .animate-enter {
+    opacity: 0;
+    top: -50px;
+    height: 0px;
+    }
+
+//--------------------------------------------------------------------
+
+
+
+.animate-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  line-height:20px;
+  opacity:1;
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+
+.animate-hide.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+
+.check-element {
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+
