@@ -10,7 +10,7 @@
 			"numer" : "0123456789"
 		},
 		"yearAdmission" : 2012,
-		"group" : "ПМИ",
+		"group" : "МФ",
 		"numberStudentRecordBook" : "10020",
 		"recordsTransferNextYear" : [
 			2013,
@@ -20,7 +20,7 @@
 	{
 		"fio" : {
 			"firstName": "Сергей",
-			"surName" : "Сидоров",
+			"surName" : "Филиппов",
 			"middleName" : "Валентинович"
 		},
 		"birthday" : "12.10.1999",
@@ -28,8 +28,98 @@
 			"numer" : "0123456789"
 		},
 		"yearAdmission" : 2012,
-		"group" : "ПМИ",
+		"group" : "ЗИ",
 		"numberStudentRecordBook" : "10021",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Федор",
+			"surName" : "Сидоров",
+			"middleName" : "Евгениевич"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ПМИ",
+		"numberStudentRecordBook" : "10022",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Сергей",
+			"surName" : "Сидоров",
+			"middleName" : "Евгениевич"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "МФ",
+		"numberStudentRecordBook" : "10023",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Павел",
+			"surName" : "Тарасов",
+			"middleName" : "Евгениевич"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ПМИ",
+		"numberStudentRecordBook" : "10024",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Сергей",
+			"surName" : "Иванов",
+			"middleName" : "Евгениевич"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ПМИ",
+		"numberStudentRecordBook" : "10025",
+		"recordsTransferNextYear" : [
+			2013,
+			2014
+		]
+	},	
+	{
+		"fio" : {
+			"firstName": "Евгений",
+			"surName" : "Сидоров",
+			"middleName" : "Александрович"
+		},
+		"birthday" : "12.10.1999",
+		"passport" : {
+			"numer" : "0123456789"
+		},
+		"yearAdmission" : 2012,
+		"group" : "ЗИ",
+		"numberStudentRecordBook" : "10026",
 		"recordsTransferNextYear" : [
 			2013,
 			2014
