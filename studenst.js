@@ -1,26 +1,33 @@
 var phonecatApp = angular.module('studentApp', []);
 
-var StudentCtrl = function ($scope, $http,  $locale) {
+var StudentCtrl = function ($scope, $http) {
 	$http.get('students.json').success(function(data) {
     	$scope.students = data;
   	}); 
+	
 	$scope.predicate = '';
-
-	$scope.remaining = function() {
-		return $index;
-	};
+	$scope.anketStudent;
+	$scope.showTable = true;
+	
+	$scope.checkVisible = function() {
+		return showTable;
+	}
 	
 	$scope.openAnket = function(anket) {
-		alert(anket.fio.firstName);
+		showTable = false;
+		anketStudent = anket;
+		$scope.$apply();
 	};
 	
+	$scope.getAnketStudent = function() {
+		return anketStudent;
+	}
+	
 	$scope.recordWordForms = {
-			0: '{} записей',
 			one: '{} запись',
 			few: '{} записи',
-			many: '{} записи',
+			many: '{} записей',
 			other: '{} записей'
- 	};
-
+ 	};			
 }
-StudentCtrl.$inject = ['$scope', '$http', '$locale'];
+StudentCtrl.$inject = ['$scope', '$http'];
