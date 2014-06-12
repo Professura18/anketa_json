@@ -1,6 +1,7 @@
 label{
 	font-weight:bold;
 }
+<<<<<<< HEAD
 .rowClass:hover {
 //	background-color:#EFEFEF;
 	cursor: pointer;
@@ -13,3 +14,5 @@ label{
 	text-align:left;
 }
 
+=======
+>>>>>>> parent of 54faa5c... Revert "Revert "test""
