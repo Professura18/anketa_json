@@ -1,4 +1,4 @@
-var phonecatApp = angular.module('studentApp', []);
+var StudentApp = angular.module('studentApp', []);
 
 var StudentCtrl = function ($scope, $http) {
 	$http.get('students.json').success(function(data) {
@@ -6,17 +6,20 @@ var StudentCtrl = function ($scope, $http) {
   	}); 
 	
 	$scope.predicate = '';
-	$scope.anketStudent;
+
 	$scope.showTable = true;
-	
+	$scope.anketStudent;
 	$scope.checkVisible = function() {
 		return showTable;
 	}
 	
 	$scope.openAnket = function(anket) {
-		showTable = false;
-		anketStudent = anket;
-		$scope.$apply();
+		$scope.showTable = false;
+		$scope.anketStudent = anket;
+	};
+	
+	$scope.backToTable = function() {
+		$scope.showTable = true;
 	};
 	
 	$scope.getAnketStudent = function() {
