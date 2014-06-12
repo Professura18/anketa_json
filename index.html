@@ -1,18 +1,16 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru" ng-app="studentApp">
 <head>
 <meta charset="utf-8">
-<!--<script src="https://code.angularjs.org/1.2.17/angular.js"></script>-->
-<!--<script src="https://code.angularjs.org/1.2.17/i18n/angular-locale_ru.js"></script>-->
-<script src="angular-1.2.17/angular.js"></script>
-<script src="angular-1.2.17/i18n/angular-locale_ru.js"></script>
+<script src="https://code.angularjs.org/1.2.17/angular.js"></script>
+<script src="https://code.angularjs.org/1.2.17/i18n/angular-locale_ru.js"></script>
 <script src="student.js"></script>
 <link rel="stylesheet" type="text/css" href="animation.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body ng-controller="StudentCtrl">
-<div align="center">
+<div ng-model="showTable">
 	Поиск: <input  type="search" placeholder="Введите ФИО" ng-model="searchFIO.fio" >
 	<span>Найдено <ng-pluralize count="filteredStudents.length" when="recordWordForms"></ng-pluralize></span>
 
@@ -22,9 +20,9 @@
     <th><a href="" ng-click="predicate = 'fio.firstName'; reverse=!reverse">Имя</a></th>
     <th><a href="" ng-click="predicate = 'fio.surName'; reverse=!reverse">Фамилия</a></th>
     <th><a href="" ng-click="predicate = 'fio.middleName'; reverse=!reverse">Отчество</a></th>
-    <th><a href="" ng-click="predicate = 'group'; reverse=!reverse">Группа</a></th>
+    <th><a href="" ng-click="predicate = 'group'; reverse=!reverse">Группа<a</th>
     <tr>
-    <tr class="rowClass" ng-animate="'animate'" ng-repeat="student in filteredStudents = (students |  filter:searchFIO:fio | orderBy:predicate:reverse)" ng-click="openAnket(student)">
+    <tr ng-animate="'animate'" ng-repeat="student in filteredStudents = (students |  filter:searchFIO:fio | orderBy:predicate:reverse)" ng-click="openAnket(student)">
     <td>{{ $index+1 }}</td>
     <td>{{ student.fio.firstName }}</td>
     <td>{{ student.fio.surName }}</td>
@@ -34,19 +32,19 @@
 	</table>
 
 	<div ng-hide="showTable">
-    <a href="" ng-click="backToTable()">К таблице</a>
+    <a href="">К таблице</a>
 		<label>ФИО: </label>
-        {{ anketStudent.fio.firstName }}
-		{{ anketStudent.fio.surName }}
-		{{ anketStudent.fio.middleName }}
+        {{ getAnketStudent().fio.firstName }}
+		{{ getAnketStudent().fio.surName }}
+		{{ getAnketStudent().fio.middleName }}
     	</br>       
-        <label>День рождения: </label> {{ anketStudent.birthday }}
+        <label>День рождения: </label> {{ getAnketStudent().birthday }}
         </br>
-        <label>Паспортные данные: </label> {{ anketStudent.passport.numer }}
+        <label>Паспортные данные: </label> {{ getAnketStudent().passport.numer }}
         </br>        
-        <label>Год поступления: </label> {{ anketStudent.yearAdmission }}
+        <label>Год поступления: </label> {{ getAnketStudent().yearAdmission }}
         </br>        
-        <label>Номер зачётной книжки: </label> {{ anketStudent.numberStudentRecordBook }}      
+        <label>Номер зачётной книжки: </label> {{ getAnketStudent().numberStudentRecordBook }}        
 	</div>
 
 </div>

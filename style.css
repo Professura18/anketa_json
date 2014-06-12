@@ -1,7 +1,3 @@
 label{
 	font-weight:bold;
 }
-.rowClass:hover {
-	background-color:grey;
-	cursor: pointer;
-}
