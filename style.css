@@ -2,6 +2,14 @@ label{
 	font-weight:bold;
 }
 .rowClass:hover {
-	background-color:grey;
+//	background-color:#EFEFEF;
 	cursor: pointer;
+	outline: medium solid #EFEFEF;
 }
+.fromClass{
+	width:500px;
+	height:auto;
+	align-self:center;
+	text-align:left;
+}
+

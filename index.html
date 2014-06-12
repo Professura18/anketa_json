@@ -2,28 +2,32 @@
 <html lang="ru" ng-app="studentApp">
 <head>
 <meta charset="utf-8">
-<!--<script src="https://code.angularjs.org/1.2.17/angular.js"></script>-->
-<!--<script src="https://code.angularjs.org/1.2.17/i18n/angular-locale_ru.js"></script>-->
-<script src="angular-1.2.17/angular.js"></script>
-<script src="angular-1.2.17/i18n/angular-locale_ru.js"></script>
+<script src="https://code.angularjs.org/1.2.17/angular.js"></script>
+<script src="https://code.angularjs.org/1.2.17/i18n/angular-locale_ru.js"></script>
+<!--<script src="angular-1.2.17/angular.js"></script>
+<script src="angular-1.2.17/i18n/angular-locale_ru.js"></script>-->
 <script src="student.js"></script>
 <link rel="stylesheet" type="text/css" href="animation.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body ng-controller="StudentCtrl">
 <div align="center">
-	Поиск: <input  type="search" placeholder="Введите ФИО" ng-model="searchFIO.fio" >
+	<label>Поиск:</label> <input  type="search" placeholder="Введите ФИО" ng-model="searchFIO.fio" >
 	<span>Найдено <ng-pluralize count="filteredStudents.length" when="recordWordForms"></ng-pluralize></span>
 
-	<table class="check-element animate-hide" ng-show="showTable">
+	<table class="table table-striped"  ng-show="showTable">
+	<thead>
     <tr>
     <th>№</th>
     <th><a href="" ng-click="predicate = 'fio.firstName'; reverse=!reverse">Имя</a></th>
     <th><a href="" ng-click="predicate = 'fio.surName'; reverse=!reverse">Фамилия</a></th>
     <th><a href="" ng-click="predicate = 'fio.middleName'; reverse=!reverse">Отчество</a></th>
     <th><a href="" ng-click="predicate = 'group'; reverse=!reverse">Группа</a></th>
-    <tr>
+    </tr>
+    </thead>
+    <tbody>
     <tr class="rowClass" ng-animate="'animate'" ng-repeat="student in filteredStudents = (students |  filter:searchFIO:fio | orderBy:predicate:reverse)" ng-click="openAnket(student)">
     <td>{{ $index+1 }}</td>
     <td>{{ student.fio.firstName }}</td>
@@ -31,10 +35,15 @@
     <td>{{ student.fio.middleName }}</td>
     <td>{{ student.group }}</td>       
     </tr>
+    </tbody>
+    <tfoot>
+	    <tr><td></td><td></td><td></td><td></td><td></td></tr>   
+    </tfoot>
 	</table>
 
-	<div ng-hide="showTable">
-    <a href="" ng-click="backToTable()">К таблице</a>
+	<div class="fromClass" ng-hide="showTable" align="center">
+    	<button type="button" class="btn btn-xs btn-primary" ng-click="backToTable()">К таблице</button>
+        </br>
 		<label>ФИО: </label>
         {{ anketStudent.fio.firstName }}
 		{{ anketStudent.fio.surName }}
